@@ -34,10 +34,3 @@ This project encompasses the development, containerization, and deployment of a 
 4. **Automation**: Jenkins Pipeline automates the entire CI/CD process, from code integration to deployment, ensuring efficiency and reliability.
 5. **Monitoring and Alerts**: Continuous monitoring of the application health and performance, with alerts configured for any anomalies.
 
-## Future Enhancements:
-
-1. **Security Improvements**: Implement additional security measures such as HTTPS, JWT authentication, and rate limiting.
-2. **Scalability**: Configure Horizontal Pod Autoscaler (HPA) to automatically scale the application based on resource utilization.
-3. **Logging and Monitoring**: Integrate with centralized logging and monitoring solutions for better visibility into application performance and troubleshooting.
-4. **Continuous Integration**: Expand CI/CD pipeline to include automated testing and code quality checks.
-5. **Optimization**: Fine-tune application and container configurations for improved resource utilization and performance.
