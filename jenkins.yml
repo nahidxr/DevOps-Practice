@@ -1,0 +1,79 @@
+pipeline {
+    agent any
+
+    environment {
+        imageName = "nahid003/${JOB_NAME}:${BUILD_ID}"
+    }
+
+    triggers {
+        pollSCM('*/2 * * * *')
+    }
+
+    stages {
+        stage('Git Clone') {
+            steps {
+                git branch: 'main', credentialsId: 'cred-git', url: 'https://github.com/nahidxr/DevOps-Practice.git'
+            }
+        }
+
+        stage('Docker Image Build') {
+            steps {
+                script {
+                dockerImage = docker.build(imageName)
+                }
+            }
+        }
+
+
+        stage('Push to Docker Registry') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'docker-key') {
+                        dockerImage.push()
+                    }
+                }
+            }
+        }
+
+        stage('Docker Image Remove') {
+            steps {
+                sh "docker rmi nahid003/${JOB_NAME}:${BUILD_ID}"
+            }
+        }
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                script {
+                    withKubeConfig(credentialsId: 'kube-cred') {
+                        sh 'sed -i "s/latest/${BUILD_ID}/g" kubernetes-deploy/main.yml'
+                        def myAppPodtExists = sh(
+                            script: 'kubectl get pod -l app=my-php-app -o name',
+                            returnStatus: true
+                        )
+                        if (myAppPodtExists == 0) {
+                            try {
+                                sh 'kubectl delete -f main.yml'
+                            } catch (Exception e) {
+                                echo "Error deleting pods: ${e.getMessage()}"
+                            }
+                        }
+                        sh 'kubectl apply -f kubernetes-deploy/main.yml'
+                    }
+                }
+            }
+        }
+    }
+
+    post {
+       success {
+            // Slack notification for successful build
+            slackSend channel: '#devops-prac', color: 'good',
+                      message: "Build successful: ${currentBuild.fullDisplayName}"
+        }
+        failure {
+            // Slack notification for failed build
+            slackSend channel: '#devops-prac'', color: 'danger',
+                      message: "Build failed: ${currentBuild.fullDisplayName}"
+        }
+    }
+}

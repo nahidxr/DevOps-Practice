@@ -4,11 +4,8 @@ require 'vendor/autoload.php'; // Include Composer's autoloader
 
 use GuzzleHttp\Client;
 
-// Define the base path for the API
-define('BASE_PATH', '/api');
-
 // OpenWeather API key
-$apiKey = 'a0970888793838fc78e4946acee28096'; // Replace this with your actual API key
+$apiKey = getenv('OPENWEATHER_API_KEY');
 
 // Get weather data for Dhaka from OpenWeather API
 function getWeatherData() {
@@ -28,6 +25,9 @@ function getWeatherData() {
 
 // Get the current datetime
 $datetime = date('Y-m-d H:i:s');
+
+// Define the base path for the API
+define('BASE_PATH', '/api');
 
 // Define the routes
 $routes = [
@@ -61,3 +61,4 @@ if (isset($routes[$path])) {
     http_response_code(404);
     echo json_encode(['error' => 'Not Found']);
 }
+?>

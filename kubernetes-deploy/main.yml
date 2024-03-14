@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: php-app-config
+data:
+  api-key: YTA5NzA4ODg3OTM4MzhmYzc4ZTQ5NDZhY2VlMjgwOTY=  
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-php-app-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-php-app
+  template:
+    metadata:
+      labels:
+        app: my-php-app
+    spec:
+      containers:
+        - name: php-apache-container
+          image: nahid003/devops-task-php-api:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: OPENWEATHER_API_KEY
+              valueFrom:
+                configMapKeyRef:
+                  name: php-app-config
+                  key: api-key
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-php-app-service
+spec:
+  selector:
+    app: my-php-app
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+      nodePort: 31000  # Specify your desired NodePort number here
+  type: NodePort
