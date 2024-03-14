@@ -39,17 +39,3 @@ This project encompasses the development, containerization, and deployment of a 
 3. **Logging and Monitoring**: Integrate with centralized logging and monitoring solutions for better visibility into application performance and troubleshooting.
 4. **Continuous Integration**: Expand CI/CD pipeline to include automated testing and code quality checks.
 5. **Optimization**: Fine-tune application and container configurations for improved resource utilization and performance.
-
-## Contributors:
-
-- [Your Name]
-- [Additional Contributors]
-
-## License:
-
-This project is licensed under the [License Name]. See the LICENSE file for details.
-
-## Acknowledgments:
-
-- [Mention any libraries, frameworks, or resources used]
-- [Any other acknowledgments or credits]
