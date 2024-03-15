@@ -41,8 +41,8 @@ This project encompasses the development, containerization, and deployment of a 
 
 ## AWS Services:
 1. **AWS Lambda**: Provides serverless compute for backend APIs. It allows you to run code without provisioning or managing servers.
-2. **Amazon RDS ** (Relational Database Service): A managed PostgreSQL database service. It handles database administration tasks like backups, patch management, and scaling.
-3. **AWS Secrets Manager **: Securely stores and manages secrets such as API keys, passwords, and database credentials.
+2. **Amazon RDS** (Relational Database Service): A managed PostgreSQL database service. It handles database administration tasks like backups, patch management, and scaling.
+3. **AWS Secrets Manager**: Securely stores and manages secrets such as API keys, passwords, and database credentials.
 4. **Amazon S3**: Object storage for static assets like images, videos, and files.
 5. **Amazon CloudFront**: A content delivery network (CDN) that distributes content globally, improving performance by caching data closer to end-users.
 6. **Amazon CloudWatch**: Provides monitoring and logging for your AWS resources.
