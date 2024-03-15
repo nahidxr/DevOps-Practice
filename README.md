@@ -7,10 +7,6 @@ This project encompasses the development, containerization, and deployment of a 
 
 ![ architecture diagram](./diagram/Task_1_diagram.png)
 
-### Task 2 : Architecture diagram
-
-![ architecture diagram](./diagram/Task_2_diagram.jpg)
-## Key Components:
 
 1. **PHP REST API**: 
    - Developed using PHP with GuzzleHttp for API requests.
@@ -38,3 +34,15 @@ This project encompasses the development, containerization, and deployment of a 
 4. **Automation**: Jenkins Pipeline automates the entire CI/CD process, from code integration to deployment, ensuring efficiency and reliability.
 5. **Monitoring and Alerts**: Continuous monitoring of the application health and performance, with alerts configured for any anomalies.
 
+
+### Task 2 : Architecture diagram
+
+![ architecture diagram](./diagram/Task_2_diagram.jpg)
+
+## AWS Services:
+ **AWS Lambda**: Provides serverless compute for backend APIs. It allows you to run code without provisioning or managing servers.
+ **Amazon RDS ** (Relational Database Service): A managed PostgreSQL database service. It handles database administration tasks like backups, patch management, and scaling.
+ **AWS Secrets Manager **: Securely stores and manages secrets such as API keys, passwords, and database credentials.
+ **Amazon S3**: Object storage for static assets like images, videos, and files.
+ **Amazon CloudFront**: A content delivery network (CDN) that distributes content globally, improving performance by caching data closer to end-users.
+ **Amazon CloudWatch**: Provides monitoring and logging for your AWS resources.
