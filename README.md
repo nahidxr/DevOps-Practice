@@ -40,9 +40,24 @@ This project encompasses the development, containerization, and deployment of a 
 ![ architecture diagram](./diagram/Task_2_diagram.jpg)
 
 ## AWS Services:
-1. **AWS Lambda**: Provides serverless compute for backend APIs. It allows you to run code without provisioning or managing servers.
-2. **Amazon RDS** (Relational Database Service): A managed PostgreSQL database service. It handles database administration tasks like backups, patch management, and scaling.
-3. **AWS Secrets Manager**: Securely stores and manages secrets such as API keys, passwords, and database credentials.
-4. **Amazon S3**: Object storage for static assets like images, videos, and files.
-5. **Amazon CloudFront**: A content delivery network (CDN) that distributes content globally, improving performance by caching data closer to end-users.
-6. **Amazon CloudWatch**: Provides monitoring and logging for your AWS resources.
+1. **AWS Lambda**: A serverless compute service that allows running code without managing servers. It's ideal for backend APIs as it automatically scales with incoming requests.
+
+2. **Amazon RDS**: A managed PostgreSQL database service that handles administrative tasks like backups, patching, and scaling. It provides a reliable and scalable database solution for your application.
+
+3. **AWS Secrets Manager**: Securely stores and manages sensitive information such as API keys, passwords, and database credentials. It ensures that your secrets are encrypted and accessed securely by your applications.
+
+4. **Amazon S3**: An object storage service for storing and retrieving static assets like images, videos, and files. It provides high durability, scalability, and low latency access to data.
+
+5. **Amazon CloudFront**: A content delivery network (CDN) that accelerates the delivery of your web content globally by caching data at edge locations closer to end-users. It improves performance and reduces latency for accessing static assets.
+
+6. **Amazon CloudWatch**: A monitoring and logging service that provides insights into your AWS resources' operational health and performance. It enables you to set up alarms, monitor metrics, and gain visibility into resource utilization.
+
+7. **Load Balancer**: Distributes incoming application or network traffic across multiple targets, ensuring high availability and reliability of your applications.
+
+8. **Route 53**: A scalable domain name system (DNS) web service designed to route end-users to internet applications by translating domain names into numeric IP addresses.
+
+9. **Amazon SNS**: A fully managed pub/sub messaging service for coordinating the delivery of messages to subscribing endpoints or clients. It allows you to send notifications or messages to a large number of recipients asynchronously.
+
+
+
+
