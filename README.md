@@ -57,6 +57,9 @@ This project encompasses the development, containerization, and deployment of a 
 8. **Route 53**: A scalable domain name system (DNS) web service designed to route end-users to internet applications by translating domain names into numeric IP addresses.
 
 9. **Amazon SNS**: A fully managed pub/sub messaging service for coordinating the delivery of messages to subscribing endpoints or clients. It allows you to send notifications or messages to a large number of recipients asynchronously.
+    
+10. **Amazon CloudFront**:
+A content delivery network (CDN) that distributes content globally, improving performance by caching data closer to end-users. Accelerates delivery of web content and reduces latency.
 
 
 
