@@ -3,9 +3,13 @@
 ---
 
 This project encompasses the development, containerization, and deployment of a PHP-based REST API integrated with weather data retrieval from OpenWeather API. The system is designed to provide basic information such as hostname, datetime, and version, along with weather data for a specified location (in this case, Dhaka). The project utilizes Docker for containerization and Kubernetes for deployment.
-### Architecture diagram
+### Task 1 : Architecture diagram
 
 ![ architecture diagram](./diagram/Task_1_diagram.png)
+
+### Task 2 : Architecture diagram
+
+![ architecture diagram](./diagram/Task_2_diagram.jpg)
 ## Key Components:
 
 1. **PHP REST API**: 
